@@ -19,7 +19,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "reset": "knex migrate:rollback && knex migrate:latest && yarn start"
+    "update": "git commit -am 'update' && git push heroku master"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
