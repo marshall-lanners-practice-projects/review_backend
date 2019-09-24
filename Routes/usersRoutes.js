@@ -22,7 +22,6 @@ function generateToken(user){
 	return jwt.sign(payload, secret, options)
 }
 
-// -----Create-----
 // create a new user
 router.post('/register', (req, res) => {
 	let  {username, email, password} = req.body
@@ -66,7 +65,7 @@ router.post('/login', (req, res) => {
 		})
 })
 
-// -----Read-----
+
 //get all game sessions for the user
 router.get('/:id', protects, (req, res) => {
 	const { id } = req.params
@@ -88,7 +87,7 @@ router.get('/:id', protects, (req, res) => {
 		})
 })
 
-// -----Update-----
+
 //update a users name/email
 router.put('/:id', (req, res) => {
 	const { id } = req.params;
