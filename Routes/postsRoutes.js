@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
 })
 
 //get all posts by a user
-router.get('_user/:id', (req, res) => {
+router.get('/user/:id', (req, res) => {
 	const { id } = req.params
 	db('users')
 	.join('posts', 'posts.user_id', '=', 'users.id')
