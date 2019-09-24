@@ -1,3 +1,6 @@
+require('dotenv').config();
+const DATABASE_URL = process.env.DB_USER
+
 module.exports = {
 
   production: {
