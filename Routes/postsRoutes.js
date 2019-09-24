@@ -1,22 +1,23 @@
-// const express = require('express');
-// const router = express.Router();
-// const knex = require('knex')
-// require('dotenv').config()
-// require('custom-env').env('production')
-// const dbConfig = require('../knexfile')
-// const db = knex(dbConfig.development)
+const express = require('express');
+const router = express.Router();
+const knex = require('knex')
+require('dotenv').config()
+require('custom-env').env('production')
+const dbConfig = require('../knexfile')
+const db = knex(dbConfig.production)
+const protects = require('./middleWear.js');
 
-// //create a post
-// router.post('', (req, res) => {
-// 	const { title, content, user_id } = req.body
-// 	db.insert({title, content, user_id}).into('posts')
-// 	.then(res => {
-// 		res.status(200).json(res)
-// 	})
-// 	.catch(error => {
-// 		res.status(500).json(error)
-// 	})
-// })
+//create a post
+router.post('', (req, res) => {
+	const { title, content, user_id } = req.body
+	db.insert({title, content, user_id}).into('posts')
+	.then(res => {
+		res.status(200).json(res)
+	})
+	.catch(error => {
+		res.status(500).json(error)
+	})
+})
 
 // //get all posts
 // router.get('', (req, res) => {
