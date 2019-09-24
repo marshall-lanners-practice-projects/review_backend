@@ -60,7 +60,7 @@ router.get('/user/:id', (req, res) => {
 })
 
 //update a post
-router.get('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
 	const { title, content } = req.body 
 	const { id } = req.params
 	db('posts')
