@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('custom-env').env('production')
 
 const express = require('express');
 const server = express();
