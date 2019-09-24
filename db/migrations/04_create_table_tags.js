@@ -1,14 +1,14 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('tag', function(tbl) {
+  return knex.schema.createTable('tags', function(tbl) {
     tbl.increments();
 
     tbl
-      .string('content')
+      .string('tag_name')
       .notNullable()
 
   })
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('tag')
+  return knex.schema.dropTable('tags')
 };
