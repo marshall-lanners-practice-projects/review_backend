@@ -13,10 +13,10 @@ server.use(morgan('tiny'))
 server.use(cors())
 
 const userRoutes = require('./Routes/usersRoutes')
-const postRoutes = require('./Routes/postsRoutes')
+// const postRoutes = require('./Routes/postsRoutes')
 
 server.use('/users', userRoutes)
-server.use('/posts', postRoutes)
+// server.use('/posts', postRoutes)
 
 const port = process.env.PORT
 
