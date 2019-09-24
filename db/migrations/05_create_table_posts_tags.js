@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
   		.unsigned()
   		.notNullable()
   		.references('id')
-  		.inTable('notes')
+  		.inTable('posts')
 
   	tbl
   		.integer('tag_id')
