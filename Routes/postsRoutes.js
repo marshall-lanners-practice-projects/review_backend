@@ -11,8 +11,8 @@ const protects = require('./middleWear.js');
 router.post('', (req, res) => {
 	const { title, content, user_id } = req.body
 	db.insert({title, content, user_id}).into('posts')
-	.then(res => {
-		res.status(200).json(res)
+	.then(response => {
+		res.status(200).json(response)
 	})
 	.catch(error => {
 		console.log(error)
@@ -23,8 +23,8 @@ router.post('', (req, res) => {
 //get all posts
 router.get('', (req, res) => {
 	db('posts')
-	.then(res => {
-		res.status(200).json(res)
+	.then(response => {
+		res.status(200).json(response)
 	})
 	.catch(error => {
 		res.status(500).json(error)
@@ -36,8 +36,8 @@ router.get('/:id', (req, res) => {
 	const { id } = req.params
 	db('posts')
 	.where({ id })
-	.then(res => {
-		res.status(200).json(res)
+	.then(response => {
+		res.status(200).json(response)
 	})
 	.catch(error => {
 		res.status(200).json(error)
@@ -51,8 +51,8 @@ router.get('_user/:id', (req, res) => {
 	.join('posts', 'posts.user_id', '=', 'users.id')
 	.where('users.id', id)
 	.select('username', 'email', 'title', 'content')
-	.then(res => {
-		res.status(200).json(res)
+	.then(response => {
+		res.status(200).json(response)
 	})
 	.catch(error => {
 		res.status(500).json(error)
@@ -66,8 +66,8 @@ router.get('/:id', (req, res) => {
 	db('posts')
 	.where({ id })
 	.update({ title, content })
-	.then(res => {
-		res.status(200).json(res)
+	.then(response => {
+		res.status(200).json(response)
 	})
 	.catch(error => {
 		res.status(200).json(error)
@@ -80,8 +80,8 @@ router.delete('/:id', (req, res) => {
 	db('posts')
 	.where({ id })
 	.del()
-	.then(res => {
-		res.status(200).json(res)
+	.then(response => {
+		res.status(200).json(response)
 	})
 	.catch(error => {
 		res.status(200).json(error)
